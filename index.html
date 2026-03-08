@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>オリジナルグッズプリント | バッグ・キャップ・ハット・タオル | オリジン</title>
+  <meta name="description" content="オリジナルバッグ・キャップ・ハット・タオル・グッズのプリントならオリジン。デザインサポート無料、小ロットからOK。東京・大阪の専門店。" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================
+       RESET
+    ============================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 62.5%; }
+    body {
+      font-family: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'メイリオ', sans-serif;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      color: #252525;
+      background: #fff;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: #252525; }
+    a:hover { opacity: 0.75; }
+    ul, ol { list-style: none; }
+    h1, h2, h3, h4 { line-height: 1.4; }
+
+    /* ============================
+       HEADER WRAP
+    ============================ */
+    .header-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+
+    /* ============================
+       TOP BAR（カラフルグラデーション背景）
+    ============================ */
+    .header-topbar {
+      position: relative;
+      overflow: hidden;
+      padding: 12px 20px 14px;
+      /* ぼやけた抽象グラデーション */
+      background:
+        linear-gradient(135deg,
+          #c0392b 0%,
+          #8e44ad 25%,
+          #2980b9 50%,
+          #16a085 70%,
+          #d35400 100%
+        );
+      filter: none;
+    }
+    /* ぼかしオーバーレイで抽象的に */
+    .header-topbar::before {
+      content: '';
+      position: absolute;
+      inset: -20px;
+      background:
+        radial-gradient(ellipse 70% 90% at 10% 50%, rgba(220,60,60,0.6) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 70% at 40% 20%, rgba(120,60,180,0.5) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 60% at 70% 70%, rgba(30,100,200,0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 80% at 90% 30%, rgba(20,160,120,0.4) 0%, transparent 55%);
+      filter: blur(18px);
+      pointer-events: none;
+    }
+    .header-topbar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.18);
+      pointer-events: none;
+    }
+    .header-topbar-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    /* ロゴブロック */
+    .header-logo-block {
+      flex-shrink: 0;
+    }
+    .header-logo-block img {
+      height: 50px;
+      width: auto;
+      display: block;
+      /* 白くして背景に馴染ませる */
+      filter: brightness(0) invert(1);
+    }
+    .header-logo-fallback {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.08em;
+    }
+
+    /* 電話番号 */
+    .header-phone-block {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .header-phone-box {
+      background: rgba(255,255,255,0.95);
+      padding: 5px 12px 7px;
+      border-radius: 3px;
+      text-align: center;
+    }
+    .header-phone-box .area {
+      font-size: 1.0rem;
+      color: #555;
+      display: block;
+      margin-bottom: 1px;
+    }
+    .header-phone-box .num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #252525;
+      letter-spacing: 0.03em;
+      display: block;
+      line-height: 1;
+    }
+    .header-phone-box .num a { color: #252525; }
+    .header-phone-box .num a:hover { opacity: 0.75; }
+
+    /* 右側ユーティリティ */
+    .header-utils {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+    .header-utils-links {
+      display: flex;
+      gap: 0;
+    }
+    .header-utils-links a {
+      font-size: 1.1rem;
+      color: #fff;
+      padding: 0 10px;
+      border-left: 1px solid rgba(255,255,255,0.35);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .header-utils-links a:first-child { border-left: none; }
+    .header-utils-links a:hover { opacity: 0.75; color: #fff; }
+
+    /* 検索バー */
+    .header-search {
+      position: relative;
+    }
+    .header-search input {
+      width: 220px;
+      padding: 7px 36px 7px 12px;
+      font-size: 1.2rem;
+      font-family: inherit;
+      border: none;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.95);
+      color: #252525;
+      outline: none;
+    }
+    .header-search input::placeholder { color: #aaa; }
+    .header-search input:focus { background: #fff; }
+    .header-search-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      font-size: 1.4rem;
+      color: #888;
+      line-height: 1;
+    }
+    .header-search-btn:hover { color: #c44a49; }
+
+    /* ============================
+       GLOBAL NAV（濃い赤）
+    ============================ */
+    .global-nav {
+      background: #A51E1E;
+    }
+    .global-nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+    }
+    .global-nav a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 15px;
+      min-height: 46px;
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-right: 1px solid rgba(255,255,255,0.18);
+      line-height: 1.25;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .global-nav a:first-child { border-left: 1px solid rgba(255,255,255,0.18); }
+    .global-nav a:hover { background: rgba(0,0,0,0.22); opacity: 1; color: #fff; }
+    .global-nav a.active { background: rgba(0,0,0,0.28); }
+    .global-nav .nav-en { font-size: 1.2rem; display: block; }
+    .global-nav .nav-ja { font-size: 0.95rem; color: rgba(255,255,255,0.72); font-weight: 400; display: block; }
+    .global-nav a:hover .nav-ja { color: rgba(255,255,255,0.92); }
+
+    /* ============================
+       BREADCRUMB
+    ============================ */
+    .breadcrumb {
+      background: #f9f9f9;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 7px 20px;
+      font-size: 1.2rem;
+      color: #888;
+    }
+    .breadcrumb-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .breadcrumb a { color: #2674d4; }
+    .breadcrumb a:hover { text-decoration: underline; opacity: 1; }
+    .bc-sep { color: #bbb; }
+
+    /* ============================
+       HERO
+    ============================ */
+    .hero {
+      position: relative;
+      background: #252525;
+      overflow: hidden;
+    }
+    .hero-img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(37,37,37,0.82) 0%,
+        rgba(37,37,37,0.5) 50%,
+        rgba(37,37,37,0.1) 100%
+      );
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 40px;
+      width: 100%;
+    }
+    .hero-catch {
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 8px;
+    }
+    .hero-title {
+      font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.5;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .hero-lead {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.9;
+      margin-bottom: 24px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================
+       BUTTONS (本サイト準拠)
+    ============================ */
+    .btn {
+      display: inline-block;
+      padding: 0.7em 2em 0.8em;
+      border-radius: 4px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, color 0.15s, opacity 0.15s;
+      line-height: 1;
+    }
+    .btn-red {
+      background: #c44a49;
+      border: 1px solid #c44a49;
+      border-bottom-width: 2px;
+      color: #fff;
+    }
+    .btn-red:hover { background: #fff; color: #c44a49; opacity: 1; }
+
+    .btn-black {
+      background: #252525;
+      border: 1px solid #252525;
+      border-bottom-width: 2px;
+      color: #fff;
+    }
+    .btn-black:hover { background: #fff; color: #252525; opacity: 1; }
+
+    .btn-basic {
+      background: #fff;
+      border: 1px solid #252525;
+      border-bottom-width: 2px;
+      color: #252525;
+    }
+    .btn-basic:hover { background: #252525; color: #fff; opacity: 1; }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); opacity: 1; color: #fff; }
+
+    .btn-lg { padding: 0.85em 2.6em 0.95em; font-size: 1.5rem; }
+
+    /* ============================
+       CATEGORY NAV BAR
+    ============================ */
+    .category-nav {
+      background: #f4f4f4;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 2px solid #dbdbdb;
+    }
+    .category-nav-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .category-nav-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .category-nav-list a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #252525;
+      border-right: 1px solid #dbdbdb;
+      transition: background 0.15s, color 0.15s;
+    }
+    .category-nav-list a:first-child { border-left: 1px solid #dbdbdb; }
+    .category-nav-list a:hover { background: #252525; color: #fff; opacity: 1; }
+    .cat-icon { font-size: 1.6rem; }
+
+    /* ============================
+       PAGE LAYOUT
+    ============================ */
+    .page-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    /* ============================
+       LEFT SIDEBAR
+    ============================ */
+    .sidebar {
+      width: 210px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 76px;
+    }
+
+    /* サイドバーブロックタイトル */
+    .side-block {
+      margin-bottom: 20px;
+    }
+    .side-block-title {
+      background: #252525;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 0;
+      margin-bottom: 0;
+      letter-spacing: 0.05em;
+    }
+
+    /* カテゴリリスト */
+    .side-cat-list {
+      border: 1px solid #dbdbdb;
+      border-top: none;
+    }
+    .side-cat-list li a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      font-size: 1.3rem;
+      color: #252525;
+      border-bottom: 1px solid #e6e6e6;
+      transition: background 0.15s, color 0.15s;
+    }
+    .side-cat-list li:last-child a { border-bottom: none; }
+    .side-cat-list li a:hover { background: #f4f4f4; opacity: 1; color: #c44a49; }
+    .side-cat-list .cat-arrow { font-size: 1.0rem; color: #bbb; }
+
+    /* サイドCTA */
+    .side-cta {
+      display: block;
+      background: #c44a49;
+      color: #fff;
+      text-align: center;
+      padding: 14px 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      border-radius: 2px;
+      transition: background 0.15s;
+      line-height: 1.5;
+    }
+    .side-cta:hover { background: #a33939; opacity: 1; color: #fff; }
+    .side-cta .side-cta-sub { font-size: 1.1rem; font-weight: 400; opacity: 0.85; display: block; }
+
+    /* サイドバーバナー */
+    .side-bnr-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .side-bnr {
+      display: block;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: opacity 0.15s;
+    }
+    .side-bnr:hover { opacity: 0.82; }
+    .side-bnr img { width: 100%; display: block; }
+
+    /* バナー画像が読めないときの代替 */
+    .bnr-alt {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 8px;
+      text-align: center;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .bnr-alt-sub { font-size: 1.0rem; font-weight: 400; opacity: 0.8; margin-bottom: 3px; }
+    .bnr-alt-main { font-size: 1.3rem; }
+    .bnr-red   { background: #c44a49; color: #fff; }
+    .bnr-dark  { background: #252525; color: #fff; }
+    .bnr-blue  { background: #2674d4; color: #fff; }
+    .bnr-gray  { background: #f4f4f4; color: #252525; border: 1px solid #dbdbdb; }
+    .bnr-green { background: #107c64; color: #fff; }
+
+    /* ============================
+       MAIN CONTENT
+    ============================ */
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* ============================
+       SECTION TITLE
+    ============================ */
+    .section-head {
+      margin-bottom: 28px;
+    }
+    .section-en {
+      display: block;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #252525;
+      margin-bottom: 2px;
+    }
+    .section-ja {
+      display: block;
+      font-size: 1.3rem;
+      color: #888;
+    }
+
+    /* contents-block-title: 本サイトと同じ */
+    .contents-block-title {
+      background: #f4f4f4;
+      border-left: 5px solid #252525;
+      color: #252525;
+      font-size: 1.8rem;
+      font-weight: 700;
+      padding: 0.4em 0.8em;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    /* ============================
+       PRODUCT BLOCK
+    ============================ */
+    .product-block {
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #e6e6e6;
+    }
+    .product-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .product-lead {
+      font-size: 1.4rem;
+      line-height: 2;
+      color: #444;
+      margin-bottom: 18px;
+    }
+
+    /* index-list: 本サイト準拠 */
+    .index-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .index-list > li {
+      width: calc(25% - 9px);
+      border: 1px solid #dbdbdb;
+      background: #fff;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: box-shadow 0.2s;
+    }
+    .index-list > li:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+
+    .item-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: #f4f3ed;
+    }
+    .item-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f4f3ed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.6rem;
+      color: #bbb;
+    }
+    .item-body { padding: 10px 10px 12px; }
+    .item-brand { font-size: 1.1rem; color: #888; margin-bottom: 2px; }
+    .item-name { font-size: 1.3rem; font-weight: 700; color: #252525; margin-bottom: 6px; line-height: 1.45; }
+    .item-price { font-size: 1.4rem; font-weight: 700; color: #c44a49; }
+    .item-price .unit { font-size: 1.1rem; color: #888; font-weight: 400; }
+    .item-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+    .tag {
+      font-size: 1.0rem;
+      background: #f4f4f4;
+      border: 1px solid #dbdbdb;
+      padding: 1px 6px;
+      color: #666;
+      border-radius: 1px;
+    }
+
+    .more-link { text-align: center; margin-top: 12px; }
+
+    /* ============================
+       REASONS
+    ============================ */
+    .reasons-section {
+      background: #f9f9f9;
+      border-top: 1px solid #e6e6e6;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 40px 0;
+      margin: 40px 0;
+    }
+    .reasons-inner { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .column4 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .column4 > * {
+      width: calc(25% - 10.5px);
+    }
+    .reason-card {
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 2px;
+      padding: 22px 16px;
+      text-align: center;
+    }
+    .reason-icon { font-size: 3.4rem; margin-bottom: 10px; display: block; }
+    .reason-badge {
+      display: inline-block;
+      background: #252525;
+      color: #fff;
+      font-size: 1.0rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 2px;
+      margin-bottom: 8px;
+      letter-spacing: 0.05em;
+    }
+    .reason-title { font-size: 1.4rem; font-weight: 700; color: #252525; margin-bottom: 8px; line-height: 1.5; }
+    .reason-desc { font-size: 1.2rem; color: #666; line-height: 1.85; }
+
+    /* ============================
+       SCENES
+    ============================ */
+    .scene-grid {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #dbdbdb;
+      border-bottom: none;
+      border-right: none;
+      margin-bottom: 40px;
+    }
+    .scene-item {
+      width: 25%;
+      padding: 20px 16px;
+      border-right: 1px solid #dbdbdb;
+      border-bottom: 1px solid #dbdbdb;
+      transition: background 0.15s;
+    }
+    .scene-item:hover { background: #f9f9f9; }
+    .scene-icon { font-size: 2.4rem; margin-bottom: 7px; display: block; }
+    .scene-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 5px; color: #252525; }
+    .scene-desc { font-size: 1.2rem; color: #666; line-height: 1.8; }
+
+    /* ============================
+       FLOW
+    ============================ */
+    .flow-wrap {
+      background: #f9f9f9;
+      border: 1px solid #e6e6e6;
+      padding: 28px 24px;
+      margin-bottom: 40px;
+      border-radius: 2px;
+    }
+    .flow-list {
+      display: flex;
+      gap: 0;
+    }
+    .flow-item {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      border-right: none;
+      padding: 20px 14px;
+      position: relative;
+      text-align: center;
+    }
+    .flow-item:last-child { border-right: 1px solid #dbdbdb; }
+    .flow-item::after {
+      content: '▶';
+      position: absolute;
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: #c44a49;
+      z-index: 1;
+    }
+    .flow-item:last-child::after { display: none; }
+    .flow-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px; height: 34px;
+      background: #252525;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .flow-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #252525; line-height: 1.4; }
+    .flow-desc { font-size: 1.1rem; color: #666; line-height: 1.7; }
+
+    /* ============================
+       STATS BAR
+    ============================ */
+    .stats-bar {
+      background: #252525;
+      padding: 32px 20px;
+    }
+    .stats-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .stat-item { text-align: center; color: #fff; }
+    .stat-num { font-size: 3.6rem; font-weight: 700; line-height: 1; margin-bottom: 4px; color: #fff; }
+    .stat-num em { font-size: 1.8rem; font-style: normal; }
+    .stat-label { font-size: 1.2rem; color: rgba(255,255,255,0.55); }
+
+    /* ============================
+       CTA
+    ============================ */
+    .cta-section {
+      background: #c44a49;
+      padding: 55px 20px;
+      text-align: center;
+    }
+    .cta-title { font-size: 2.4rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .cta-lead { font-size: 1.4rem; color: rgba(255,255,255,0.9); line-height: 2; margin-bottom: 28px; }
+    .cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .btn-white {
+      background: #fff;
+      border: 2px solid #fff;
+      color: #c44a49;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+    .btn-white:hover { background: rgba(255,255,255,0.88); opacity: 1; color: #c44a49; }
+
+    .cta-tel-area {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+    }
+    .cta-tel-item { text-align: center; color: #fff; }
+    .cta-tel-name { font-size: 1.2rem; color: rgba(255,255,255,0.75); margin-bottom: 2px; }
+    .cta-tel-num { font-size: 2.8rem; font-weight: 700; line-height: 1.2; margin-bottom: 2px; }
+    .cta-tel-num a { color: #fff; }
+    .cta-tel-hours { font-size: 1.1rem; color: rgba(255,255,255,0.6); }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    .site-footer {
+      background: #252525;
+      color: rgba(255,255,255,0.6);
+      padding: 44px 20px 24px;
+    }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-logo img { height: 38px; filter: brightness(0) invert(1); opacity: 0.7; }
+    .footer-logo-fallback { font-size: 1.8rem; font-weight: 700; color: #fff; letter-spacing: 0.05em; }
+    .footer-catch { font-size: 1.1rem; color: rgba(255,255,255,0.4); margin-top: 6px; }
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .footer-nav a {
+      display: block;
+      padding: 3px 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      border-right: 1px solid rgba(255,255,255,0.2);
+      line-height: 1;
+      transition: color 0.15s;
+    }
+    .footer-nav a:first-child { border-left: 1px solid rgba(255,255,255,0.2); }
+    .footer-nav a:hover { color: #fff; opacity: 1; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-copy { font-size: 1.1rem; color: rgba(255,255,255,0.3); }
+
+    /* ============================
+       SP FIXED BAR
+    ============================ */
+    .sp-fixed-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 999;
+      background: #c44a49;
+      padding: 10px 14px;
+    }
+    .sp-fixed-bar a {
+      display: block;
+      background: #fff;
+      color: #c44a49;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px;
+      border-radius: 2px;
+    }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1024px) {
+      .sidebar { width: 190px; }
+      .index-list > li { width: calc(33.33% - 8px); }
+      .column4 > * { width: calc(50% - 7px); }
+    }
+
+    @media (max-width: 768px) {
+      .header-topbar { display: none; }
+      .global-nav { display: none; }
+      .category-nav-list a { padding: 8px 12px; font-size: 1.2rem; }
+      .cat-icon { font-size: 1.4rem; }
+
+      .page-wrap {
+        flex-direction: column;
+        padding: 16px 16px 40px;
+      }
+      .sidebar {
+        width: 100%;
+        position: static;
+        order: 2; /* SPはメインの後に */
+      }
+      .main-content { order: 1; }
+
+      .index-list > li { width: calc(50% - 6px); }
+      .column4 > * { width: calc(50% - 7px); }
+      .scene-item { width: 50%; }
+
+      .flow-list { flex-direction: column; }
+      .flow-item { border-right: 1px solid #dbdbdb; border-bottom: none; }
+      .flow-item:last-child { border-bottom: 1px solid #dbdbdb; }
+      .flow-item::after { content: '▼'; right: auto; left: 50%; top: auto; bottom: -10px; transform: translateX(-50%); font-size: 1.0rem; }
+
+      .sp-fixed-bar { display: block; }
+      body { padding-bottom: 62px; }
+
+      .hero-title { font-size: 2.2rem; }
+      .hero-lead { display: none; }
+      .hero-content { padding: 0 20px; }
+
+      .footer-top { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .index-list > li { width: calc(50% - 6px); }
+      .scene-item { width: 50%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===========================
+     HEADER WRAP（sticky全体）
+=========================== -->
+<div class="header-wrap">
+
+  <!-- TOP BAR（カラフルグラデーション） -->
+  <div class="header-topbar">
+    <div class="header-topbar-inner">
+
+      <!-- ロゴ -->
+      <a href="https://www.origin-infinity.biz/" class="header-logo-block">
+        <img
+          src="https://www.origin-infinity.biz/common/img/img_logo.svg"
+          alt="オリジン"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <span class="header-logo-fallback" style="display:none;">ORIGIN</span>
+      </a>
+
+      <!-- 電話番号 -->
+      <div class="header-phone-block">
+        <div class="header-phone-box">
+          <span class="area">大阪本社（フリーダイヤル）</span>
+          <span class="num"><a href="tel:0120192105">0120-192-105</a></span>
+        </div>
+        <div class="header-phone-box">
+          <span class="area">東京営業部</span>
+          <span class="num"><a href="tel:0334090333">03-3409-0333</a></span>
+        </div>
+      </div>
+
+      <!-- 右側：リンク＋検索 -->
+      <div class="header-utils">
+        <div class="header-utils-links">
+          <a href="https://www.origin-infinity.biz/">♡ お気に入り</a>
+          <a href="https://www.origin-infinity.biz/mypage">会員登録</a>
+          <a href="https://www.origin-infinity.biz/mypage">ログイン</a>
+          <a href="https://www.origin-infinity.biz/cart">🛒 カート</a>
+        </div>
+        <div class="header-search">
+          <input type="text" placeholder="品名・品番で検索" />
+          <button class="header-search-btn" aria-label="検索">🔍</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- GLOBAL NAV（濃い赤） -->
+  <nav class="global-nav">
+    <div class="global-nav-inner">
+      <a href="https://www.origin-infinity.biz/policy">
+        <span class="nav-en">POLISY</span>
+        <span class="nav-ja">私たちの願い</span>
+      </a>
+      <a href="https://www.origin-infinity.biz/items">
+        <span class="nav-en">ITEMS</span>
+        <span class="nav-ja">商品一覧</span>
+      </a>
+      <a href="https://www.origin-infinity.biz/works">
+        <span class="nav-en">WORKS</span>
+        <span class="nav-ja">実績紹介</span>
+      </a>
+      <a href="https://www.origin-infinity.biz/print_goods" class="active">
+        <span class="nav-en">GOODS</span>
+        <span class="nav-ja">グッズ</span>
+      </a>
+      <a href="https://www.origin-infinity.biz/design_print">
+        <span class="nav-en">DESIGN PRINT</span>
+        <span class="nav-ja">デザインプリント</span>
+      </a>
+      <a href="https://www.origin-infinity.biz/contact">
+        <span class="nav-en">CONTACT</span>
+        <span class="nav-ja">お問い合わせ</span>
+      </a>
+      <a href="https://www.origin-infinity.biz/download">
+        <span class="nav-en">DOWNLOAD</span>
+        <span class="nav-ja">入稿・発注書</span>
+      </a>
+    </div>
+  </nav>
+
+</div><!-- /header-wrap -->
+
+<!-- ===========================
+     BREADCRUMB
+=========================== -->
+<nav class="breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="https://www.origin-infinity.biz/">HOME</a>
+    <span class="bc-sep">›</span>
+    <a href="https://www.origin-infinity.biz/print_goods">GOODS グッズ</a>
+    <span class="bc-sep">›</span>
+    <span>バッグ・キャップ・ハット・タオル・グッズ</span>
+  </div>
+</nav>
+
+<!-- ===========================
+     HERO
+=========================== -->
+<section class="hero">
+  <img
+    class="hero-img"
+    src="https://www.origin-infinity.biz/common/img/print_goods/banner01.jpg"
+    alt="オリジナルグッズプリント"
+    onerror="this.style.minHeight='380px';"
+  />
+  <div class="hero-overlay">
+    <div class="hero-content" data-aos="fade-right" data-aos-duration="750">
+      <p class="hero-catch">ORIGINAL GOODS PRINT</p>
+      <h1 class="hero-title">
+        バッグ・キャップ・タオル<br>
+        オリジナルグッズを作ろう
+      </h1>
+      <p class="hero-lead">
+        デザインサポート無料 ／ 小ロットから対応 ／ 東京・大阪で直接相談できる
+      </p>
+      <div class="hero-btns">
+        <a href="https://www.origin-infinity.biz/contact" class="btn btn-red btn-lg">無料でお問い合わせ</a>
+        <a href="#products" class="btn btn-outline-white btn-lg">商品ラインナップを見る ↓</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     CATEGORY NAV
+=========================== -->
+<nav class="category-nav">
+  <div class="category-nav-inner">
+    <ul class="category-nav-list">
+      <li><a href="#bag"><span class="cat-icon">👜</span>バッグ</a></li>
+      <li><a href="#cap"><span class="cat-icon">🧢</span>キャップ</a></li>
+      <li><a href="#hat"><span class="cat-icon">🎩</span>ハット</a></li>
+      <li><a href="#towel"><span class="cat-icon">🏊</span>タオル</a></li>
+      <li><a href="#goods"><span class="cat-icon">🎁</span>その他グッズ</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===========================
+     PAGE WRAP
+=========================== -->
+<div class="page-wrap" id="products">
+
+  <!-- ===========================
+       LEFT SIDEBAR
+  =========================== -->
+  <aside class="sidebar">
+
+    <!-- お問い合わせ -->
+    <div class="side-block" style="margin-bottom:14px;">
+      <a href="https://www.origin-infinity.biz/contact" class="side-cta">
+        <span class="side-cta-sub">グッズのご相談・お見積もりは</span>
+        無料お問い合わせ
+      </a>
+    </div>
+
+    <!-- 商品カテゴリ -->
+    <div class="side-block">
+      <p class="side-block-title">商品カテゴリ</p>
+      <ul class="side-cat-list">
+        <li><a href="https://www.origin-infinity.biz/items/tshirts">Tシャツ <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/polo">ポロシャツ <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/parka">パーカー・スウェット <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/sports">スポーツウェア <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/ladies">レディース <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/kids">キッズ・ベビー <span class="cat-arrow">›</span></a></li>
+        <li><a href="#bag" style="color:#c44a49; font-weight:700;">▶ バッグ <span class="cat-arrow">›</span></a></li>
+        <li><a href="#cap" style="color:#c44a49; font-weight:700;">▶ キャップ・ハット <span class="cat-arrow">›</span></a></li>
+        <li><a href="#towel" style="color:#c44a49; font-weight:700;">▶ タオル <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/apron">エプロン <span class="cat-arrow">›</span></a></li>
+        <li><a href="https://www.origin-infinity.biz/items/uniform">制服・ユニフォーム <span class="cat-arrow">›</span></a></li>
+        <li><a href="#goods">その他グッズ <span class="cat-arrow">›</span></a></li>
+      </ul>
+    </div>
+
+    <!-- バナー -->
+    <div class="side-block">
+      <p class="side-block-title">お役立ち情報</p>
+      <div class="side-bnr-list">
+
+        <a href="https://www.origin-infinity.biz/print_sample" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-sample.jpg"
+            alt="プリント仕上がり見本"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-dark\'><span class=\'bnr-alt-sub\'>実物確認</span><span class=\'bnr-alt-main\'>プリント仕上がり見本</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/school" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-school.jpg"
+            alt="いつでも学割 5%OFF"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-red\'><span class=\'bnr-alt-sub\'>いつでも</span><span class=\'bnr-alt-main\'>学割 5%OFF</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/doujin" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-doujin.jpg"
+            alt="同人さま大歓迎"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-blue\'><span class=\'bnr-alt-sub\'>創作活動を応援</span><span class=\'bnr-alt-main\'>同人さま大歓迎</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/catalog" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-digital-catalog.jpg"
+            alt="電子カタログ"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-gray\'><span class=\'bnr-alt-sub\'>無料で閲覧</span><span class=\'bnr-alt-main\'>電子カタログ</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/catalog_request" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-catalog.jpg"
+            alt="カタログ請求"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-gray\'><span class=\'bnr-alt-sub\'>紙カタログ（無料）</span><span class=\'bnr-alt-main\'>カタログ請求</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/houjin" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-houjin.jpg"
+            alt="法人専用大口割引"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-dark\'><span class=\'bnr-alt-sub\'>大量注文の方へ</span><span class=\'bnr-alt-main\'>法人専用大口割引</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/blog" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-blog.jpg"
+            alt="スタッフブログ"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-green\'><span class=\'bnr-alt-sub\'>更新中</span><span class=\'bnr-alt-main\'>スタッフブログ</span></div>'"
+          />
+        </a>
+
+        <a href="https://www.origin-infinity.biz/recruit" class="side-bnr">
+          <img
+            src="https://www.origin-infinity.biz/common/img/bnr_side-recruit.jpg"
+            alt="採用情報"
+            onerror="this.outerHTML='<div class=\'bnr-alt bnr-gray\'><span class=\'bnr-alt-sub\'>一緒に働こう</span><span class=\'bnr-alt-main\'>採用情報</span></div>'"
+          />
+        </a>
+
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ===========================
+       MAIN CONTENT
+  =========================== -->
+  <main class="main-content">
+
+    <div class="section-head" data-aos="fade-up">
+      <span class="section-en">GOODS LINEUP</span>
+      <span class="section-ja">取り扱いグッズ一覧</span>
+    </div>
+
+    <!-- ---- BAG ---- -->
+    <div class="product-block" id="bag" data-aos="fade-up">
+      <h2 class="contents-block-title">👜 バッグ</h2>
+      <p class="product-lead">ちょっとしたノベルティやグッズに大人気のオリジナルバッグ。トートバッグ・サコッシュ・キャンバスバッグなど種類も豊富。企業ロゴや店舗名、イベントデザインをプリントして特別な一品に仕上げます。</p>
+      <ul class="index-list">
+        <li>
+          <img class="item-img" src="https://www.origin-infinity.biz/files/0bd9146b1d6e44c3178fe4e7dfd55d9e.jpg" alt="キャンバストート" onerror="this.outerHTML='<div class=\'item-placeholder\'>👜</div>'" />
+          <div class="item-body">
+            <p class="item-brand">Printstar</p>
+            <p class="item-name">キャンバストート（M）</p>
+            <p class="item-price">¥960<span class="unit">〜（1枚）</span></p>
+            <div class="item-tags"><span class="tag">トート</span><span class="tag">キャンバス</span></div>
+          </div>
+        </li>
+        <li>
+          <img class="item-img" src="https://www.origin-infinity.biz/files/9fa7fa9ee53c112fbb9e753ff91016df.jpg" alt="サコッシュ" onerror="this.outerHTML='<div class=\'item-placeholder\'>👜</div>'" />
+          <div class="item-body">
+            <p class="item-brand">United Athle</p>
+            <p class="item-name">レギュラーキャンバス サコッシュ</p>
+            <p class="item-price">¥1,030<span class="unit">〜（1枚）</span></p>
+            <div class="item-tags"><span class="tag">サコッシュ</span><span class="tag">ノベルティ</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">👜</div>
+          <div class="item-body">
+            <p class="item-brand">United Athle</p>
+            <p class="item-name">スモールキャンバストートバッグ</p>
+            <p class="item-price">¥780<span class="unit">〜（1枚）</span></p>
+            <div class="item-tags"><span class="tag">スモール</span><span class="tag">エコバッグ</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">👜</div>
+          <div class="item-body">
+            <p class="item-brand">Printstar</p>
+            <p class="item-name">キャンバストート（L）</p>
+            <p class="item-price">¥1,100<span class="unit">〜（1枚）</span></p>
+            <div class="item-tags"><span class="tag">トート(L)</span><span class="tag">大容量</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="more-link">
+        <a href="https://www.origin-infinity.biz/print_goods" class="btn btn-basic">バッグをもっと見る →</a>
+      </div>
+    </div>
+
+    <!-- ---- CAP ---- -->
+    <div class="product-block" id="cap" data-aos="fade-up">
+      <h2 class="contents-block-title">🧢 キャップ</h2>
+      <p class="product-lead">ウェアだけじゃない！チームで帽子も揃えよう。スポーツ・部活・イベントにぴったりなオリジナルキャップ。刺繍・プリントどちらにも対応し、チームの一体感を演出します。</p>
+      <ul class="index-list">
+        <li>
+          <div class="item-placeholder">🧢</div>
+          <div class="item-body">
+            <p class="item-brand">United Athle</p>
+            <p class="item-name">コットンツイルキャップ</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">コットン</span><span class="tag">チームウェア</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🧢</div>
+          <div class="item-body">
+            <p class="item-brand">Printstar</p>
+            <p class="item-name">ローキャップ（6パネル）</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">ローキャップ</span><span class="tag">刺繍対応</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🧢</div>
+          <div class="item-body">
+            <p class="item-brand">ATACK BASE</p>
+            <p class="item-name">ワークキャップ</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">ワーク</span><span class="tag">ユニフォーム</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🧢</div>
+          <div class="item-body">
+            <p class="item-brand">United Athle</p>
+            <p class="item-name">スナップバックキャップ</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">スナップバック</span><span class="tag">フリーサイズ</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="more-link">
+        <a href="https://www.origin-infinity.biz/print_goods" class="btn btn-basic">キャップをもっと見る →</a>
+      </div>
+    </div>
+
+    <!-- ---- HAT ---- -->
+    <div class="product-block" id="hat" data-aos="fade-up">
+      <h2 class="contents-block-title">🎩 ハット</h2>
+      <p class="product-lead">アウトドアイベント・フェスに大活躍のオリジナルハット。紫外線対策にもなり、実用性と販促効果を両立。ブランドロゴや団体名を入れてオリジナリティを演出できます。</p>
+      <ul class="index-list">
+        <li>
+          <div class="item-placeholder">🎩</div>
+          <div class="item-body">
+            <p class="item-brand">United Athle</p>
+            <p class="item-name">バケットハット</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">バケット</span><span class="tag">アウトドア</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🎩</div>
+          <div class="item-body">
+            <p class="item-brand">Printstar</p>
+            <p class="item-name">サファリハット</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">サファリ</span><span class="tag">UV対策</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🎩</div>
+          <div class="item-body">
+            <p class="item-brand">United Athle</p>
+            <p class="item-name">ストローハット</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">ストロー</span><span class="tag">フェス</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🎩</div>
+          <div class="item-body">
+            <p class="item-brand">ATACK BASE</p>
+            <p class="item-name">メッシュハット</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">メッシュ</span><span class="tag">スポーツ</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="more-link">
+        <a href="https://www.origin-infinity.biz/print_goods" class="btn btn-basic">ハットをもっと見る →</a>
+      </div>
+    </div>
+
+    <!-- ---- TOWEL ---- -->
+    <div class="product-block" id="towel" data-aos="fade-up">
+      <h2 class="contents-block-title">🏊 タオル</h2>
+      <p class="product-lead">染料プリント対応のオリジナルタオル。スポーツタオル・フェイスタオルなどにフルカラーで写真やイラストをプリント可能。部活・スポーツチームのグッズとして定番人気アイテムです。</p>
+      <ul class="index-list">
+        <li>
+          <img class="item-img" src="https://www.origin-infinity.biz/files/8a09e9f8e9b142a1244f6dc3313015bb.jpg" alt="染料プリントタオル" onerror="this.outerHTML='<div class=\'item-placeholder\'>🏊</div>'" />
+          <div class="item-body">
+            <p class="item-brand">オリジナル</p>
+            <p class="item-name">染料プリントタオル（スポーツ）</p>
+            <p class="item-price">¥1,020<span class="unit">〜（1枚）</span></p>
+            <div class="item-tags"><span class="tag">染料プリント</span><span class="tag">フルカラー</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🏊</div>
+          <div class="item-body">
+            <p class="item-brand">オリジナル</p>
+            <p class="item-name">フェイスタオル</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">フェイス</span><span class="tag">記念品</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🏊</div>
+          <div class="item-body">
+            <p class="item-brand">オリジナル</p>
+            <p class="item-name">マフラータオル</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">マフラー</span><span class="tag">応援グッズ</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🏊</div>
+          <div class="item-body">
+            <p class="item-brand">オリジナル</p>
+            <p class="item-name">バスタオル</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">バスタオル</span><span class="tag">ノベルティ</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="more-link">
+        <a href="https://www.origin-infinity.biz/print_goods" class="btn btn-basic">タオルをもっと見る →</a>
+      </div>
+    </div>
+
+    <!-- ---- GOODS ---- -->
+    <div class="product-block" id="goods" data-aos="fade-up">
+      <h2 class="contents-block-title">🎁 その他グッズ</h2>
+      <p class="product-lead">エプロン・ポーチ・巾着など、多彩なグッズにプリント対応。店舗ユニフォームや記念品、ノベルティなど幅広い用途に。まずはお気軽にご相談ください。</p>
+      <ul class="index-list">
+        <li>
+          <div class="item-placeholder">👘</div>
+          <div class="item-body">
+            <p class="item-brand">BEES-BEAM</p>
+            <p class="item-name">Bee エプロン</p>
+            <p class="item-price">¥1,910<span class="unit">〜（1枚）</span></p>
+            <div class="item-tags"><span class="tag">エプロン</span><span class="tag">飲食店</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🎒</div>
+          <div class="item-body">
+            <p class="item-brand">Printstar</p>
+            <p class="item-name">ナップサック</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">ナップサック</span><span class="tag">学校</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">👝</div>
+          <div class="item-body">
+            <p class="item-brand">オリジナル</p>
+            <p class="item-name">巾着バッグ</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">巾着</span><span class="tag">ノベルティ</span></div>
+          </div>
+        </li>
+        <li>
+          <div class="item-placeholder">🎁</div>
+          <div class="item-body">
+            <p class="item-brand">オリジナル</p>
+            <p class="item-name">その他グッズ（要相談）</p>
+            <p class="item-price">お見積もり対応</p>
+            <div class="item-tags"><span class="tag">要相談</span><span class="tag">なんでもOK</span></div>
+          </div>
+        </li>
+      </ul>
+      <div class="more-link">
+        <a href="https://www.origin-infinity.biz/print_goods" class="btn btn-basic">グッズをもっと見る →</a>
+      </div>
+    </div>
+
+    <!-- ---- SCENES ---- -->
+    <div data-aos="fade-up">
+      <h2 class="contents-block-title" style="margin-top:40px;">こんなシーンで活躍します</h2>
+      <ul class="scene-grid">
+        <li class="scene-item"><span class="scene-icon">🏆</span><h3 class="scene-title">スポーツ・部活</h3><p class="scene-desc">チームキャップ・応援タオル・バッグなど。チームの絆を深めるグッズを揃えましょう。</p></li>
+        <li class="scene-item"><span class="scene-icon">🏢</span><h3 class="scene-title">企業・ノベルティ</h3><p class="scene-desc">ロゴ入りトート・展示会グッズ・社内記念品など、ブランディングに効果的。</p></li>
+        <li class="scene-item"><span class="scene-icon">🎵</span><h3 class="scene-title">イベント・フェス</h3><p class="scene-desc">音楽フェス・アウトドアのグッズ販売に。タオル・キャップ・ハットは定番。</p></li>
+        <li class="scene-item"><span class="scene-icon">🍽️</span><h3 class="scene-title">飲食店・店舗</h3><p class="scene-desc">スタッフエプロン・お客様向けバッグなど。店舗ブランドをグッズで統一。</p></li>
+        <li class="scene-item"><span class="scene-icon">🎓</span><h3 class="scene-title">学校・サークル</h3><p class="scene-desc">卒業記念品・文化祭グッズ・サークルのオリジナルグッズに。</p></li>
+        <li class="scene-item"><span class="scene-icon">🎁</span><h3 class="scene-title">ギフト・記念品</h3><p class="scene-desc">世界でひとつのオリジナルグッズをプレゼントに。1枚から注文できます。</p></li>
+        <li class="scene-item"><span class="scene-icon">🌐</span><h3 class="scene-title">グッズ販売・EC</h3><p class="scene-desc">クリエイターやブランドのグッズ展開に。小ロット対応で在庫リスクを抑えて。</p></li>
+        <li class="scene-item"><span class="scene-icon">🤝</span><h3 class="scene-title">その他・なんでも</h3><p class="scene-desc">「こんなものを作りたい」というご要望はまずご相談ください。</p></li>
+      </ul>
+    </div>
+
+    <!-- ---- FLOW ---- -->
+    <div data-aos="fade-up">
+      <h2 class="contents-block-title">ご注文の流れ</h2>
+      <div class="flow-wrap">
+        <ol class="flow-list">
+          <li class="flow-item">
+            <div class="flow-num">1</div>
+            <h3 class="flow-title">お問い合わせ・ご相談</h3>
+            <p class="flow-desc">電話・Web・店舗でお気軽に。デザインがなくてもOK。</p>
+          </li>
+          <li class="flow-item">
+            <div class="flow-num">2</div>
+            <h3 class="flow-title">商品・デザイン決定</h3>
+            <p class="flow-desc">商品・カラー・デザインを決定。デザインサポート無料。</p>
+          </li>
+          <li class="flow-item">
+            <div class="flow-num">3</div>
+            <h3 class="flow-title">お見積もり・確認</h3>
+            <p class="flow-desc">数量・仕様に応じたお見積もりを提示。納得後にご注文。</p>
+          </li>
+          <li class="flow-item">
+            <div class="flow-num">4</div>
+            <h3 class="flow-title">製作・プリント</h3>
+            <p class="flow-desc">ご入金後、製作開始。品質チェックのうえ丁寧に仕上げます。</p>
+          </li>
+          <li class="flow-item">
+            <div class="flow-num">5</div>
+            <h3 class="flow-title">納品・お届け</h3>
+            <p class="flow-desc">全国配送対応。店舗受け取りも可能です。</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </main><!-- /main-content -->
+
+</div><!-- /page-wrap -->
+
+<!-- ===========================
+     REASONS
+=========================== -->
+<section class="reasons-section" data-aos="fade-up">
+  <div class="reasons-inner">
+    <h2 class="contents-block-title">オリジンが選ばれる理由</h2>
+    <ul class="column4">
+      <li class="reason-card">
+        <span class="reason-icon">✏️</span>
+        <span class="reason-badge">REASON 01</span>
+        <h3 class="reason-title">デザインサポート無料</h3>
+        <p class="reason-desc">デザインのご相談・修正は何度でも無料。デザイン経験がなくても安心してお任せください。</p>
+      </li>
+      <li class="reason-card">
+        <span class="reason-icon">📦</span>
+        <span class="reason-badge">REASON 02</span>
+        <h3 class="reason-title">業界屈指のラインナップ</h3>
+        <p class="reason-desc">豊富なカラー・サイズ・素材から選べます。国内外の有名ブランド商品を多数取り揃え。</p>
+      </li>
+      <li class="reason-card">
+        <span class="reason-icon">🔢</span>
+        <span class="reason-badge">REASON 03</span>
+        <h3 class="reason-title">1枚から大量注文まで</h3>
+        <p class="reason-desc">個人の記念品から企業の大量発注まで柔軟に対応。最適なプランをご提案します。</p>
+      </li>
+      <li class="reason-card">
+        <span class="reason-icon">🏪</span>
+        <span class="reason-badge">REASON 04</span>
+        <h3 class="reason-title">東京・大阪に実店舗完備</h3>
+        <p class="reason-desc">実店舗での対面お打ち合わせも対応。実物サンプルを確認しながら安心してご注文できます。</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===========================
+     STATS
+=========================== -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-num">1<em>枚〜</em></div><div class="stat-label">小ロット対応</div></div>
+    <div class="stat-item"><div class="stat-num">0<em>円</em></div><div class="stat-label">デザインサポート無料</div></div>
+    <div class="stat-item"><div class="stat-num">2<em>都市</em></div><div class="stat-label">東京・大阪に実店舗</div></div>
+    <div class="stat-item"><div class="stat-num">5<em>種</em></div><div class="stat-label">グッズカテゴリ対応</div></div>
+  </div>
+</div>
+
+<!-- ===========================
+     CTA
+=========================== -->
+<section class="cta-section" data-aos="fade-up">
+  <h2 class="cta-title">まずは無料でご相談ください</h2>
+  <p class="cta-lead">
+    「デザインが思いつかない」「どんな商品が合うか分からない」そんな方もご安心ください。<br>
+    専門スタッフが丁寧にサポートします。
+  </p>
+  <div class="cta-btns">
+    <a href="https://www.origin-infinity.biz/contact" class="btn btn-white btn-lg">Webでお問い合わせ</a>
+    <a href="https://www.origin-infinity.biz/print_goods" class="btn btn-black btn-lg">商品一覧を見る</a>
+  </div>
+  <div class="cta-tel-area">
+    <div class="cta-tel-item">
+      <p class="cta-tel-name">大阪本社（フリーダイヤル）</p>
+      <p class="cta-tel-num"><a href="tel:0120192105">0120-192-105</a></p>
+      <p class="cta-tel-hours">月〜金 10:00〜20:00 ／ 土 10:00〜19:00</p>
+    </div>
+    <div class="cta-tel-item">
+      <p class="cta-tel-name">東京営業部</p>
+      <p class="cta-tel-num"><a href="tel:0334090333">03-3409-0333</a></p>
+      <p class="cta-tel-hours">月〜金 10:00〜20:00 ／ 土 10:00〜19:00</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="https://www.origin-infinity.biz/" class="footer-logo">
+          <img
+            src="https://www.origin-infinity.biz/common/img/img_logo.svg"
+            alt="オリジン"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+          />
+          <span class="footer-logo-fallback" style="display:none;">ORIGIN</span>
+        </a>
+        <p class="footer-catch">Let's make original items!</p>
+      </div>
+      <nav>
+        <ul class="footer-nav">
+          <li><a href="https://www.origin-infinity.biz/policy">POLICY</a></li>
+          <li><a href="https://www.origin-infinity.biz/items">ITEMS</a></li>
+          <li><a href="https://www.origin-infinity.biz/works">WORKS</a></li>
+          <li><a href="https://www.origin-infinity.biz/print_goods">GOODS</a></li>
+          <li><a href="https://www.origin-infinity.biz/design_print">DESIGN PRINT</a></li>
+          <li><a href="https://www.origin-infinity.biz/contact">CONTACT</a></li>
+          <li><a href="https://www.origin-infinity.biz/download">DOWNLOAD</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Copyright(C) ORIGIN. All Rights Reserved.</p>
+      <p style="font-size:1.1rem;color:rgba(255,255,255,0.25);">TOKYO / OSAKA</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SP Fixed Bar -->
+<div class="sp-fixed-bar">
+  <a href="https://www.origin-infinity.biz/contact">無料でお問い合わせ ▶</a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 600, once: true, offset: 40 });
+</script>
+
+</body>
+</html>
