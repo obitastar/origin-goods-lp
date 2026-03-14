@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,7 +45,6 @@
           #16a085 70%,
           #d35400 100%
         );
-      filter: none;
     }
     .header-topbar::before {
       content: '';
@@ -202,10 +201,6 @@
       border-bottom: 2px solid #e6e6e6;
       padding: 40px 20px;
     }
-    .featured-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
     .featured-head {
       display: flex;
       align-items: baseline;
@@ -224,7 +219,6 @@
       font-size: 1.3rem;
       color: #888;
     }
-    .featured-panel { display: block; }
     .featured-grid {
       display: flex;
       flex-wrap: wrap;
@@ -250,15 +244,6 @@
       background: #f4f3ed;
       display: block;
     }
-    .featured-card-placeholder {
-      width: 100%;
-      aspect-ratio: 1;
-      background: #f4f3ed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-    }
     .featured-card-body { padding: 10px 12px 14px; }
     .featured-card-cat {
       display: inline-block;
@@ -277,7 +262,6 @@
       margin-bottom: 4px;
       line-height: 1.45;
     }
-    .featured-card-brand { font-size: 1.1rem; color: #888; margin-bottom: 6px; }
     .featured-card-price {
       font-size: 1.5rem;
       font-weight: 700;
@@ -288,15 +272,7 @@
       color: #888;
       font-weight: 400;
     }
-    .featured-card-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 7px; }
-    .featured-more {
-      text-align: center;
-      margin-top: 24px;
-    }
     @media (max-width: 768px) {
-      .featured-card { width: calc(50% - 8px); }
-    }
-    @media (max-width: 480px) {
       .featured-card { width: calc(50% - 8px); }
     }
 .breadcrumb {
@@ -433,33 +409,6 @@
     .btn-outline-white:hover { background: rgba(255,255,255,0.15); opacity: 1; color: #fff; }
 
     .btn-lg { padding: 0.85em 2.6em 0.95em; font-size: 1.5rem; }
-.category-nav {
-      background: #f4f4f4;
-      border-top: 1px solid #e6e6e6;
-      border-bottom: 2px solid #dbdbdb;
-    }
-    .category-nav-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-    }
-    .category-nav-list {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .category-nav-list a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 10px 20px;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #252525;
-      border-right: 1px solid #dbdbdb;
-      transition: background 0.15s, color 0.15s;
-    }
-    .category-nav-list a:first-child { border-left: 1px solid #dbdbdb; }
-    .category-nav-list a:hover { background: #252525; color: #fff; opacity: 1; }
-    .cat-icon { font-size: 1.6rem; }
 .page-wrap {
       max-width: 1140px;
       margin: 0 auto;
@@ -614,22 +563,10 @@
       object-fit: cover;
       background: #f4f3ed;
     }
-    .item-placeholder {
-      width: 100%;
-      aspect-ratio: 1;
-      background: #f4f3ed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.6rem;
-      color: #bbb;
-    }
     .item-body { padding: 10px 10px 12px; }
-    .item-brand { font-size: 1.1rem; color: #888; margin-bottom: 2px; }
     .item-name { font-size: 1.3rem; font-weight: 700; color: #252525; margin-bottom: 6px; line-height: 1.45; }
     .item-price { font-size: 1.4rem; font-weight: 700; color: #c44a49; }
     .item-price .unit { font-size: 1.1rem; color: #888; font-weight: 400; }
-    .item-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
     .tag {
       font-size: 1.0rem;
       background: #f4f4f4;
@@ -883,9 +820,6 @@
     @media (max-width: 768px) {
       .header-topbar { display: none; }
       .global-nav { display: none; }
-      .category-nav-list a { padding: 8px 12px; font-size: 1.2rem; }
-      .cat-icon { font-size: 1.4rem; }
-
       .page-wrap {
         flex-direction: column;
         padding: 16px 16px 40px;
@@ -916,26 +850,16 @@
       .hero-title { font-size: 3rem; }
       .hero-lead { font-size: 1.3rem; }
       .hero-content { padding: 40px 20px; }
-      .hero-float-icon { opacity: 0.5; }
-
       .footer-top { flex-direction: column; }
     }
 
-    @media (max-width: 480px) {
-      .index-list > li { width: calc(50% - 6px); }
-      .scene-item { width: 50%; }
-    }
   </style>
 </head>
 <body>
 
 <div class="header-wrap">
-
-  <!-- TOP BAR（カラフルグラデーション） -->
   <div class="header-topbar">
     <div class="header-topbar-inner">
-
-      <!-- ロゴ -->
       <a href="https://www.origin-infinity.biz/" class="header-logo-block">
         <img
           src="https://www.origin-infinity.biz/common/img/img_logo.svg"
@@ -944,8 +868,6 @@
         />
         <span class="header-logo-fallback" style="display:none;">ORIGIN</span>
       </a>
-
-      <!-- 電話番号 -->
       <div class="header-phone-block">
         <div class="header-phone-box">
           <span class="area">大阪本社（フリーダイヤル）</span>
@@ -956,8 +878,6 @@
           <span class="num"><a href="tel:0334090333">03-3409-0333</a></span>
         </div>
       </div>
-
-      <!-- 右側：リンク＋検索 -->
       <div class="header-utils">
         <div class="header-utils-links">
           <a href="https://www.origin-infinity.biz/favorite/">♡ お気に入り</a>
@@ -973,8 +893,6 @@
 
     </div>
   </div>
-
-  <!-- GLOBAL NAV（濃い赤） -->
   <nav class="global-nav">
     <div class="global-nav-inner">
       <a href="https://www.origin-infinity.biz/top">
@@ -1008,7 +926,7 @@
     </div>
   </nav>
 
-</div><!-- /header-wrap -->
+</div>
 
 <nav class="breadcrumb">
   <div class="breadcrumb-inner">
@@ -1021,11 +939,8 @@
 </nav>
 
 <section class="hero">
-  <!-- 背景画像 -->
   <img class="hero-bg-img" src="hero-banner2.png" alt="" />
-  <!-- テキスト可読性のための遮蔽 -->
   <div class="hero-shade"></div>
-  <!-- コンテンツ -->
   <div class="hero-overlay">
     <div class="hero-content" data-aos="fade-right" data-aos-duration="750">
       <p class="hero-catch">オリジナルグッズで</p>
@@ -1045,16 +960,12 @@
 <div class="page-wrap" id="products">
 
   <aside class="sidebar">
-
-    <!-- お問い合わせ -->
     <div class="side-block" style="margin-bottom:14px;">
       <a href="https://www.origin-infinity.biz/inquiry/" class="side-cta">
         <span class="side-cta-sub">グッズのご相談・お見積もりは</span>
         無料お問い合わせ
       </a>
     </div>
-
-    <!-- 商品カテゴリ -->
     <div class="side-block">
       <p class="side-block-title">商品カテゴリ</p>
       <ul class="side-cat-list">
@@ -1079,8 +990,6 @@
         <li><a href="https://www.origin-infinity.biz/product/tag-name/">タグ・ネーム <span class="cat-arrow">›</span></a></li>
       </ul>
     </div>
-
-    <!-- バナー -->
     <div class="side-block">
       <p class="side-block-title">お役立ち情報</p>
       <div class="side-bnr-list">
@@ -1155,8 +1064,6 @@
   </aside>
 
   <main class="main-content">
-
-    <!-- ---- FEATURED PRODUCTS ---- -->
     <div class="featured-section" data-aos="fade-up" style="background:none; padding: 0 0 40px;">
       <div class="featured-head">
         <span class="featured-head-en">FEATURED PRODUCTS</span>
@@ -1188,8 +1095,6 @@
       <span class="section-en">GOODS LINEUP</span>
       <span class="section-ja">取り扱いグッズ一覧</span>
     </div>
-
-    <!-- ---- BAG ---- -->
     <div class="product-block" id="bag" data-aos="fade-up">
       <h2 class="contents-block-title">■ バッグ</h2>
       <p class="product-lead">ちょっとしたノベルティやグッズに大人気のオリジナルバッグ。トートバッグ・サコッシュ・キャンバスバッグなど種類も豊富。企業ロゴや店舗名、イベントデザインをプリントして特別な一品に仕上げます。</p>
@@ -1227,8 +1132,6 @@
         <a href="https://www.origin-infinity.biz/product/bag/?&order=pop" class="btn btn-basic">バッグをもっと見る →</a>
       </div>
     </div>
-
-    <!-- ---- HAT ---- -->
     <div class="product-block" id="hat" data-aos="fade-up">
       <h2 class="contents-block-title">■ キャップ・ハット</h2>
       <p class="product-lead">アウトドアイベント・フェスに大活躍のオリジナルハット。紫外線対策にもなり、実用性と販促効果を両立。ブランドロゴや団体名を入れてオリジナリティを演出できます。</p>
@@ -1266,8 +1169,6 @@
         <a href="https://www.origin-infinity.biz/product/cap-hat/" class="btn btn-basic">キャップ・ハットをもっと見る →</a>
       </div>
     </div>
-
-    <!-- ---- TOWEL ---- -->
     <div class="product-block" id="towel" data-aos="fade-up">
       <h2 class="contents-block-title">■ タオル</h2>
       <p class="product-lead">染料プリント対応のオリジナルタオル。スポーツタオル・フェイスタオルなどにフルカラーで写真やイラストをプリント可能。部活・スポーツチームのグッズとして定番人気アイテムです。</p>
@@ -1298,8 +1199,6 @@
         <a href="https://www.origin-infinity.biz/product/towel/" class="btn btn-basic">タオルをもっと見る →</a>
       </div>
     </div>
-
-    <!-- ---- GOODS ---- -->
     <div class="product-block" id="goods" data-aos="fade-up">
       <h2 class="contents-block-title">■ その他グッズ</h2>
       <p class="product-lead">エプロン・ポーチ・巾着など、多彩なグッズにプリント対応。店舗ユニフォームや記念品、ノベルティなど幅広い用途に。まずはお気軽にご相談ください。</p>
@@ -1337,8 +1236,6 @@
         <a href="https://www.origin-infinity.biz/product/goods/" class="btn btn-basic">グッズをもっと見る →</a>
       </div>
     </div>
-
-    <!-- ---- SCENES ---- -->
     <div data-aos="fade-up">
       <h2 class="contents-block-title" style="margin-top:40px;">こんなシーンで活躍します</h2>
       <ul class="scene-grid">
@@ -1352,8 +1249,6 @@
         <li class="scene-item"><span class="scene-icon">🤝</span><h3 class="scene-title">その他・なんでも</h3><p class="scene-desc">「こんなものを作りたい」というご要望はまずご相談ください。</p></li>
       </ul>
     </div>
-
-    <!-- ---- FLOW ---- -->
     <div class="order-flow-section" data-aos="fade-up">
       <h2 class="contents-block-title">ご注文の流れ</h2>
       <div class="flow-steps-container">
@@ -1403,9 +1298,9 @@
       </div>
     </div>
 
-  </main><!-- /main-content -->
+  </main>
 
-</div><!-- /page-wrap -->
+</div>
 
 <section class="reasons-section" data-aos="fade-up">
   <div class="reasons-inner">
@@ -1504,8 +1399,6 @@
     </div>
   </div>
 </footer>
-
-<!-- SP Fixed Bar -->
 <div class="sp-fixed-bar">
   <a href="https://www.origin-infinity.biz/inquiry/">無料でお問い合わせ ▶</a>
 </div>
