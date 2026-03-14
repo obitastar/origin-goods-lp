@@ -7,15 +7,13 @@
   <meta name="description" content="オリジナルバッグ・キャップ・ハット・タオル・グッズのプリントならオリジン。デザインサポート無料、小ロットからOK。東京・大阪の専門店。" />
 
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
 
   <style>
-    /* ============================
-       RESET
-    ============================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 62.5%; }
     body {
       font-family: 'Noto Sans JP', 'ヒラギノ角ゴ ProN W3', 'メイリオ', sans-serif;
@@ -29,25 +27,16 @@
     a:hover { opacity: 0.75; }
     ul, ol { list-style: none; }
     h1, h2, h3, h4 { line-height: 1.4; }
-
-    /* ============================
-       HEADER WRAP
-    ============================ */
-    .header-wrap {
+.header-wrap {
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 12px rgba(0,0,0,0.25);
     }
-
-    /* ============================
-       TOP BAR（カラフルグラデーション背景）
-    ============================ */
-    .header-topbar {
+.header-topbar {
       position: relative;
       overflow: hidden;
       padding: 12px 20px 14px;
-      /* ぼやけた抽象グラデーション */
       background:
         linear-gradient(135deg,
           #c0392b 0%,
@@ -58,7 +47,6 @@
         );
       filter: none;
     }
-    /* ぼかしオーバーレイで抽象的に */
     .header-topbar::before {
       content: '';
       position: absolute;
@@ -88,8 +76,6 @@
       justify-content: space-between;
       gap: 16px;
     }
-
-    /* ロゴブロック */
     .header-logo-block {
       flex-shrink: 0;
     }
@@ -97,7 +83,6 @@
       height: 50px;
       width: auto;
       display: block;
-      /* 白くして背景に馴染ませる */
       filter: brightness(0) invert(1);
     }
     .header-logo-fallback {
@@ -106,8 +91,6 @@
       color: #fff;
       letter-spacing: 0.08em;
     }
-
-    /* 電話番号 */
     .header-phone-block {
       display: flex;
       gap: 10px;
@@ -135,8 +118,6 @@
     }
     .header-phone-box .num a { color: #252525; }
     .header-phone-box .num a:hover { opacity: 0.75; }
-
-    /* 右側ユーティリティ */
     .header-utils {
       display: flex;
       flex-direction: column;
@@ -157,8 +138,6 @@
     }
     .header-utils-links a:first-child { border-left: none; }
     .header-utils-links a:hover { opacity: 0.75; color: #fff; }
-
-    /* 検索バー */
     .header-search {
       position: relative;
     }
@@ -189,11 +168,7 @@
       line-height: 1;
     }
     .header-search-btn:hover { color: #c44a49; }
-
-    /* ============================
-       GLOBAL NAV（濃い赤）
-    ============================ */
-    .global-nav {
+.global-nav {
       background: #A51E1E;
     }
     .global-nav-inner {
@@ -222,11 +197,109 @@
     .global-nav .nav-en { font-size: 1.2rem; display: block; }
     .global-nav .nav-ja { font-size: 0.95rem; color: rgba(255,255,255,0.72); font-weight: 400; display: block; }
     .global-nav a:hover .nav-ja { color: rgba(255,255,255,0.92); }
-
-    /* ============================
-       BREADCRUMB
-    ============================ */
-    .breadcrumb {
+.featured-section {
+      background: #f9f9f9;
+      border-bottom: 2px solid #e6e6e6;
+      padding: 40px 20px;
+    }
+    .featured-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .featured-head {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #252525;
+    }
+    .featured-head-en {
+      font-size: 2.0rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #252525;
+    }
+    .featured-head-ja {
+      font-size: 1.3rem;
+      color: #888;
+    }
+    .featured-panel { display: block; }
+    .featured-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .featured-card {
+      width: calc(25% - 12px);
+      background: #fff;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .featured-card:hover {
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transform: translateY(-2px);
+    }
+    .featured-card-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      background: #f4f3ed;
+      display: block;
+    }
+    .featured-card-placeholder {
+      width: 100%;
+      aspect-ratio: 1;
+      background: #f4f3ed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    .featured-card-body { padding: 10px 12px 14px; }
+    .featured-card-cat {
+      display: inline-block;
+      font-size: 1.0rem;
+      font-weight: 700;
+      color: #fff;
+      background: #c44a49;
+      padding: 1px 7px;
+      border-radius: 1px;
+      margin-bottom: 6px;
+    }
+    .featured-card-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #252525;
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+    .featured-card-brand { font-size: 1.1rem; color: #888; margin-bottom: 6px; }
+    .featured-card-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #c44a49;
+    }
+    .featured-card-price .unit {
+      font-size: 1.1rem;
+      color: #888;
+      font-weight: 400;
+    }
+    .featured-card-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 7px; }
+    .featured-more {
+      text-align: center;
+      margin-top: 24px;
+    }
+    @media (max-width: 768px) {
+      .featured-card { width: calc(50% - 8px); }
+    }
+    @media (max-width: 480px) {
+      .featured-card { width: calc(50% - 8px); }
+    }
+.breadcrumb {
       background: #f9f9f9;
       border-bottom: 1px solid #e6e6e6;
       padding: 7px 20px;
@@ -243,68 +316,80 @@
     .breadcrumb a { color: #2674d4; }
     .breadcrumb a:hover { text-decoration: underline; opacity: 1; }
     .bc-sep { color: #bbb; }
-
-    /* ============================
-       HERO
-    ============================ */
-    .hero {
+.hero {
       position: relative;
-      background: #252525;
       overflow: hidden;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      background: #111;
     }
-    .hero-img {
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      max-height: 420px;
+      height: 100%;
       object-fit: cover;
+      object-position: center;
       display: block;
     }
-    .hero-overlay {
+    .hero-shade {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to right,
-        rgba(37,37,37,0.82) 0%,
-        rgba(37,37,37,0.5) 50%,
-        rgba(37,37,37,0.1) 100%
+        rgba(0,0,0,0.62) 0%,
+        rgba(0,0,0,0.45) 40%,
+        rgba(0,0,0,0.0) 70%
       );
+      pointer-events: none;
+    }
+    .hero-overlay {
+      position: relative;
+      width: 100%;
       display: flex;
       align-items: center;
+      z-index: 1;
     }
     .hero-content {
       max-width: 1140px;
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 60px 40px;
       width: 100%;
     }
     .hero-catch {
+      display: inline-block;
       font-size: 1.2rem;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 8px;
+      letter-spacing: 0.25em;
+      color: #fff;
+      font-weight: 700;
+      background: #c44a49;
+      padding: 3px 10px;
+      margin-bottom: 14px;
     }
     .hero-title {
-      font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+      font-size: clamp(3.2rem, 5vw, 5.6rem);
       font-weight: 700;
-      line-height: 1.5;
+      line-height: 1.3;
       color: #fff;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.9);
+      letter-spacing: 0.04em;
     }
     .hero-lead {
-      font-size: 1.4rem;
-      color: rgba(255,255,255,0.85);
-      line-height: 1.9;
-      margin-bottom: 24px;
+      font-size: 1.5rem;
+      color: #fff;
+      line-height: 2.0;
+      margin-bottom: 28px;
+      border-left: none;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.7);
     }
     .hero-btns {
       display: flex;
-      gap: 12px;
+      gap: 14px;
       flex-wrap: wrap;
     }
-
-    /* ============================
-       BUTTONS (本サイト準拠)
-    ============================ */
-    .btn {
+.btn {
       display: inline-block;
       padding: 0.7em 2em 0.8em;
       border-radius: 4px;
@@ -348,11 +433,7 @@
     .btn-outline-white:hover { background: rgba(255,255,255,0.15); opacity: 1; color: #fff; }
 
     .btn-lg { padding: 0.85em 2.6em 0.95em; font-size: 1.5rem; }
-
-    /* ============================
-       CATEGORY NAV BAR
-    ============================ */
-    .category-nav {
+.category-nav {
       background: #f4f4f4;
       border-top: 1px solid #e6e6e6;
       border-bottom: 2px solid #dbdbdb;
@@ -379,11 +460,7 @@
     .category-nav-list a:first-child { border-left: 1px solid #dbdbdb; }
     .category-nav-list a:hover { background: #252525; color: #fff; opacity: 1; }
     .cat-icon { font-size: 1.6rem; }
-
-    /* ============================
-       PAGE LAYOUT
-    ============================ */
-    .page-wrap {
+.page-wrap {
       max-width: 1140px;
       margin: 0 auto;
       padding: 32px 20px 60px;
@@ -391,18 +468,12 @@
       gap: 28px;
       align-items: flex-start;
     }
-
-    /* ============================
-       LEFT SIDEBAR
-    ============================ */
-    .sidebar {
+.sidebar {
       width: 210px;
       flex-shrink: 0;
       position: sticky;
       top: 76px;
     }
-
-    /* サイドバーブロックタイトル */
     .side-block {
       margin-bottom: 20px;
     }
@@ -416,8 +487,6 @@
       margin-bottom: 0;
       letter-spacing: 0.05em;
     }
-
-    /* カテゴリリスト */
     .side-cat-list {
       border: 1px solid #dbdbdb;
       border-top: none;
@@ -435,8 +504,6 @@
     .side-cat-list li:last-child a { border-bottom: none; }
     .side-cat-list li a:hover { background: #f4f4f4; opacity: 1; color: #c44a49; }
     .side-cat-list .cat-arrow { font-size: 1.0rem; color: #bbb; }
-
-    /* サイドCTA */
     .side-cta {
       display: block;
       background: #c44a49;
@@ -452,8 +519,6 @@
     }
     .side-cta:hover { background: #a33939; opacity: 1; color: #fff; }
     .side-cta .side-cta-sub { font-size: 1.1rem; font-weight: 400; opacity: 0.85; display: block; }
-
-    /* サイドバーバナー */
     .side-bnr-list {
       display: flex;
       flex-direction: column;
@@ -467,8 +532,6 @@
     }
     .side-bnr:hover { opacity: 0.82; }
     .side-bnr img { width: 100%; display: block; }
-
-    /* バナー画像が読めないときの代替 */
     .bnr-alt {
       display: flex;
       flex-direction: column;
@@ -486,19 +549,11 @@
     .bnr-blue  { background: #2674d4; color: #fff; }
     .bnr-gray  { background: #f4f4f4; color: #252525; border: 1px solid #dbdbdb; }
     .bnr-green { background: #107c64; color: #fff; }
-
-    /* ============================
-       MAIN CONTENT
-    ============================ */
-    .main-content {
+.main-content {
       flex: 1;
       min-width: 0;
     }
-
-    /* ============================
-       SECTION TITLE
-    ============================ */
-    .section-head {
+.section-head {
       margin-bottom: 28px;
     }
     .section-en {
@@ -514,8 +569,6 @@
       font-size: 1.3rem;
       color: #888;
     }
-
-    /* contents-block-title: 本サイトと同じ */
     .contents-block-title {
       background: #f4f4f4;
       border-left: 5px solid #252525;
@@ -526,11 +579,7 @@
       margin-bottom: 14px;
       line-height: 1.5;
     }
-
-    /* ============================
-       PRODUCT BLOCK
-    ============================ */
-    .product-block {
+.product-block {
       margin-bottom: 50px;
       padding-bottom: 50px;
       border-bottom: 1px solid #e6e6e6;
@@ -543,8 +592,6 @@
       color: #444;
       margin-bottom: 18px;
     }
-
-    /* index-list: 本サイト準拠 */
     .index-list {
       display: flex;
       flex-wrap: wrap;
@@ -593,11 +640,7 @@
     }
 
     .more-link { text-align: center; margin-top: 12px; }
-
-    /* ============================
-       REASONS
-    ============================ */
-    .reasons-section {
+.reasons-section {
       background: #f9f9f9;
       border-top: 1px solid #e6e6e6;
       border-bottom: 1px solid #e6e6e6;
@@ -634,11 +677,7 @@
     }
     .reason-title { font-size: 1.4rem; font-weight: 700; color: #252525; margin-bottom: 8px; line-height: 1.5; }
     .reason-desc { font-size: 1.2rem; color: #666; line-height: 1.85; }
-
-    /* ============================
-       SCENES
-    ============================ */
-    .scene-grid {
+.scene-grid {
       display: flex;
       flex-wrap: wrap;
       border: 1px solid #dbdbdb;
@@ -657,61 +696,71 @@
     .scene-icon { font-size: 2.4rem; margin-bottom: 7px; display: block; }
     .scene-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 5px; color: #252525; }
     .scene-desc { font-size: 1.2rem; color: #666; line-height: 1.8; }
-
-    /* ============================
-       FLOW
-    ============================ */
-    .flow-wrap {
-      background: #f9f9f9;
-      border: 1px solid #e6e6e6;
-      padding: 28px 24px;
+.order-flow-section {
       margin-bottom: 40px;
-      border-radius: 2px;
     }
-    .flow-list {
+    .flow-steps-container {
       display: flex;
       gap: 0;
+      align-items: stretch;
     }
-    .flow-item {
+    .flow-step {
       flex: 1;
       background: #fff;
       border: 1px solid #dbdbdb;
       border-right: none;
-      padding: 20px 14px;
+      padding: 22px 14px 20px;
       position: relative;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .flow-item:last-child { border-right: 1px solid #dbdbdb; }
-    .flow-item::after {
-      content: '▶';
+    .flow-step:last-child { border-right: 1px solid #dbdbdb; }
+    .flow-step::after {
+      content: '';
       position: absolute;
-      right: -10px;
+      right: -12px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 1.2rem;
-      color: #c44a49;
-      z-index: 1;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 12px solid #c44a49;
+      z-index: 2;
     }
-    .flow-item:last-child::after { display: none; }
-    .flow-num {
+    .flow-step:last-child::after { display: none; }
+    .step-number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px; height: 34px;
-      background: #252525;
+      width: 28px; height: 28px;
+      background: #c44a49;
       color: #fff;
       border-radius: 50%;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      line-height: 1;
     }
-    .flow-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; color: #252525; line-height: 1.4; }
-    .flow-desc { font-size: 1.1rem; color: #666; line-height: 1.7; }
-
-    /* ============================
-       STATS BAR
-    ============================ */
-    .stats-bar {
+    .step-icon {
+      font-size: 2.2rem;
+      color: #c44a49;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .step-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #252525;
+      margin-bottom: 5px;
+      line-height: 1.4;
+    }
+    .step-desc {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+    }
+.stats-bar {
       background: #252525;
       padding: 32px 20px;
     }
@@ -727,11 +776,7 @@
     .stat-num { font-size: 3.6rem; font-weight: 700; line-height: 1; margin-bottom: 4px; color: #fff; }
     .stat-num em { font-size: 1.8rem; font-style: normal; }
     .stat-label { font-size: 1.2rem; color: rgba(255,255,255,0.55); }
-
-    /* ============================
-       CTA
-    ============================ */
-    .cta-section {
+.cta-section {
       background: #c44a49;
       padding: 55px 20px;
       text-align: center;
@@ -767,11 +812,7 @@
     .cta-tel-num { font-size: 2.8rem; font-weight: 700; line-height: 1.2; margin-bottom: 2px; }
     .cta-tel-num a { color: #fff; }
     .cta-tel-hours { font-size: 1.1rem; color: rgba(255,255,255,0.6); }
-
-    /* ============================
-       FOOTER
-    ============================ */
-    .site-footer {
+.site-footer {
       background: #252525;
       color: rgba(255,255,255,0.6);
       padding: 44px 20px 24px;
@@ -815,11 +856,7 @@
       gap: 8px;
     }
     .footer-copy { font-size: 1.1rem; color: rgba(255,255,255,0.3); }
-
-    /* ============================
-       SP FIXED BAR
-    ============================ */
-    .sp-fixed-bar {
+.sp-fixed-bar {
       display: none;
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -837,11 +874,7 @@
       padding: 10px;
       border-radius: 2px;
     }
-
-    /* ============================
-       RESPONSIVE
-    ============================ */
-    @media (max-width: 1024px) {
+@media (max-width: 1024px) {
       .sidebar { width: 190px; }
       .index-list > li { width: calc(33.33% - 8px); }
       .column4 > * { width: calc(50% - 7px); }
@@ -860,7 +893,7 @@
       .sidebar {
         width: 100%;
         position: static;
-        order: 2; /* SPはメインの後に */
+        order: 2;
       }
       .main-content { order: 1; }
 
@@ -868,17 +901,22 @@
       .column4 > * { width: calc(50% - 7px); }
       .scene-item { width: 50%; }
 
-      .flow-list { flex-direction: column; }
-      .flow-item { border-right: 1px solid #dbdbdb; border-bottom: none; }
-      .flow-item:last-child { border-bottom: 1px solid #dbdbdb; }
-      .flow-item::after { content: '▼'; right: auto; left: 50%; top: auto; bottom: -10px; transform: translateX(-50%); font-size: 1.0rem; }
+      .flow-steps-container { flex-direction: column; }
+      .flow-step { border-right: 1px solid #dbdbdb; border-bottom: none; flex-direction: row; align-items: center; text-align: left; gap: 14px; padding: 16px 14px; }
+      .flow-step:last-child { border-bottom: 1px solid #dbdbdb; }
+      .flow-step::after { border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 12px solid #c44a49; border-bottom: none; right: auto; left: 50%; top: auto; bottom: -12px; transform: translateX(-50%); }
+      .flow-step .step-number { margin-bottom: 0; flex-shrink: 0; }
+      .flow-step .step-icon { margin-bottom: 0; flex-shrink: 0; }
+      .flow-step .step-title { margin-bottom: 2px; }
+      .flow-step br { display: none; }
 
       .sp-fixed-bar { display: block; }
       body { padding-bottom: 62px; }
 
-      .hero-title { font-size: 2.2rem; }
-      .hero-lead { display: none; }
-      .hero-content { padding: 0 20px; }
+      .hero-title { font-size: 3rem; }
+      .hero-lead { font-size: 1.3rem; }
+      .hero-content { padding: 40px 20px; }
+      .hero-float-icon { opacity: 0.5; }
 
       .footer-top { flex-direction: column; }
     }
@@ -891,9 +929,6 @@
 </head>
 <body>
 
-<!-- ===========================
-     HEADER WRAP（sticky全体）
-=========================== -->
 <div class="header-wrap">
 
   <!-- TOP BAR（カラフルグラデーション） -->
@@ -975,9 +1010,6 @@
 
 </div><!-- /header-wrap -->
 
-<!-- ===========================
-     BREADCRUMB
-=========================== -->
 <nav class="breadcrumb">
   <div class="breadcrumb-inner">
     <a href="https://www.origin-infinity.biz/">HOME</a>
@@ -988,25 +1020,19 @@
   </div>
 </nav>
 
-<!-- ===========================
-     HERO
-=========================== -->
 <section class="hero">
-  <img
-    class="hero-img"
-    src="https://www.origin-infinity.biz/common/img/print_goods/banner01.jpg"
-    alt="オリジナルグッズプリント"
-    onerror="this.style.minHeight='380px';"
-  />
+  <!-- 背景画像 -->
+  <img class="hero-bg-img" src="hero-banner.jpg" alt="" />
+  <!-- テキスト可読性のための遮蔽 -->
+  <div class="hero-shade"></div>
+  <!-- コンテンツ -->
   <div class="hero-overlay">
     <div class="hero-content" data-aos="fade-right" data-aos-duration="750">
-      <p class="hero-catch">ORIGINAL GOODS PRINT</p>
-      <h1 class="hero-title">
-        バッグ・キャップ・タオル<br>
-        オリジナルグッズを作ろう
-      </h1>
+      <p class="hero-catch">オリジナルグッズで</p>
+      <h1 class="hero-title">想いを形に</h1>
       <p class="hero-lead">
-        デザインサポート無料 ／ 小ロットから対応 ／ 東京・大阪で直接相談できる
+        タオル・バッグ・キャップ・グッズ<br>
+        1個から作れるあなただけのオリジナル
       </p>
       <div class="hero-btns">
         <a href="https://www.origin-infinity.biz/contact" class="btn btn-red btn-lg">無料でお問い合わせ</a>
@@ -1016,29 +1042,8 @@
   </div>
 </section>
 
-<!-- ===========================
-     CATEGORY NAV
-=========================== -->
-<nav class="category-nav">
-  <div class="category-nav-inner">
-    <ul class="category-nav-list">
-      <li><a href="#bag"><span class="cat-icon">👜</span>バッグ</a></li>
-      <li><a href="#cap"><span class="cat-icon">🧢</span>キャップ</a></li>
-      <li><a href="#hat"><span class="cat-icon">🎩</span>ハット</a></li>
-      <li><a href="#towel"><span class="cat-icon">🏊</span>タオル</a></li>
-      <li><a href="#goods"><span class="cat-icon">🎁</span>その他グッズ</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ===========================
-     PAGE WRAP
-=========================== -->
 <div class="page-wrap" id="products">
 
-  <!-- ===========================
-       LEFT SIDEBAR
-  =========================== -->
   <aside class="sidebar">
 
     <!-- お問い合わせ -->
@@ -1142,10 +1147,36 @@
 
   </aside>
 
-  <!-- ===========================
-       MAIN CONTENT
-  =========================== -->
   <main class="main-content">
+
+    <!-- ---- FEATURED PRODUCTS ---- -->
+    <div class="featured-section" data-aos="fade-up" style="background:none; padding: 0 0 40px;">
+      <div class="featured-head">
+        <span class="featured-head-en">FEATURED PRODUCTS</span>
+        <span class="featured-head-ja">注目のグッズ</span>
+      </div>
+      <div class="featured-panel">
+        <div class="featured-grid">
+          <a href="#goods" class="featured-card">
+            <div class="featured-card-placeholder">🔑</div>
+            <div class="featured-card-body"><span class="featured-card-cat">グッズ</span><p class="featured-card-name">アクリルキーホルダー</p><p class="featured-card-brand">オリジナル</p><p class="featured-card-price">お見積もり対応</p><div class="featured-card-tags"><span class="tag">アクリル</span><span class="tag">キーホルダー</span></div></div>
+          </a>
+          <a href="#goods" class="featured-card">
+            <div class="featured-card-placeholder">🏆</div>
+            <div class="featured-card-body"><span class="featured-card-cat">グッズ</span><p class="featured-card-name">アクリルスタンド</p><p class="featured-card-brand">オリジナル</p><p class="featured-card-price">お見積もり対応</p><div class="featured-card-tags"><span class="tag">アクリル</span><span class="tag">スタンド</span></div></div>
+          </a>
+          <a href="#goods" class="featured-card">
+            <div class="featured-card-placeholder">📛</div>
+            <div class="featured-card-body"><span class="featured-card-cat">グッズ</span><p class="featured-card-name">缶バッジ</p><p class="featured-card-brand">オリジナル</p><p class="featured-card-price">お見積もり対応</p><div class="featured-card-tags"><span class="tag">缶バッジ</span><span class="tag">ノベルティ</span></div></div>
+          </a>
+          <a href="#goods" class="featured-card">
+            <div class="featured-card-placeholder">🖼️</div>
+            <div class="featured-card-body"><span class="featured-card-cat">グッズ</span><p class="featured-card-name">タペストリー</p><p class="featured-card-brand">オリジナル</p><p class="featured-card-price">お見積もり対応</p><div class="featured-card-tags"><span class="tag">タペストリー</span><span class="tag">フルカラー</span></div></div>
+          </a>
+        </div>
+        <div class="featured-more"><a href="#goods" class="btn btn-basic">すべての商品を見る ↓</a></div>
+      </div>
+    </div>
 
     <div class="section-head" data-aos="fade-up">
       <span class="section-en">GOODS LINEUP</span>
@@ -1403,36 +1434,52 @@
     </div>
 
     <!-- ---- FLOW ---- -->
-    <div data-aos="fade-up">
+    <div class="order-flow-section" data-aos="fade-up">
       <h2 class="contents-block-title">ご注文の流れ</h2>
-      <div class="flow-wrap">
-        <ol class="flow-list">
-          <li class="flow-item">
-            <div class="flow-num">1</div>
-            <h3 class="flow-title">お問い合わせ・ご相談</h3>
-            <p class="flow-desc">電話・Web・店舗でお気軽に。デザインがなくてもOK。</p>
-          </li>
-          <li class="flow-item">
-            <div class="flow-num">2</div>
-            <h3 class="flow-title">商品・デザイン決定</h3>
-            <p class="flow-desc">商品・カラー・デザインを決定。デザインサポート無料。</p>
-          </li>
-          <li class="flow-item">
-            <div class="flow-num">3</div>
-            <h3 class="flow-title">お見積もり・確認</h3>
-            <p class="flow-desc">数量・仕様に応じたお見積もりを提示。納得後にご注文。</p>
-          </li>
-          <li class="flow-item">
-            <div class="flow-num">4</div>
-            <h3 class="flow-title">製作・プリント</h3>
-            <p class="flow-desc">ご入金後、製作開始。品質チェックのうえ丁寧に仕上げます。</p>
-          </li>
-          <li class="flow-item">
-            <div class="flow-num">5</div>
-            <h3 class="flow-title">納品・お届け</h3>
-            <p class="flow-desc">全国配送対応。店舗受け取りも可能です。</p>
-          </li>
-        </ol>
+      <div class="flow-steps-container">
+
+        <div class="flow-step">
+          <div class="step-number">1</div>
+          <div class="step-icon"><i class="fas fa-edit"></i></div>
+          <h3 class="step-title">お問い合わせ・<br>ご相談</h3>
+          <p class="step-desc">電話・Web・店舗でお気軽に。デザインがなくてもOK。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-number">2</div>
+          <div class="step-icon"><i class="fas fa-comments"></i></div>
+          <h3 class="step-title">商品・デザイン<br>決定</h3>
+          <p class="step-desc">商品・カラー・デザインを決定。デザインサポート無料。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-number">3</div>
+          <div class="step-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+          <h3 class="step-title">お見積もり・<br>ご確認</h3>
+          <p class="step-desc">数量・仕様に応じたお見積もりを提示。納得後にご注文。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-number">4</div>
+          <div class="step-icon"><i class="fas fa-credit-card"></i></div>
+          <h3 class="step-title">ご注文・<br>お支払い</h3>
+          <p class="step-desc">ご注文確定後にお支払い。各種お支払い方法に対応。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-number">5</div>
+          <div class="step-icon"><i class="fas fa-print"></i></div>
+          <h3 class="step-title">製作・<br>プリント</h3>
+          <p class="step-desc">ご入金確認後、製作開始。品質チェックのうえ丁寧に仕上げます。</p>
+        </div>
+
+        <div class="flow-step">
+          <div class="step-number">6</div>
+          <div class="step-icon"><i class="fas fa-box-open"></i></div>
+          <h3 class="step-title">納品・<br>お届け</h3>
+          <p class="step-desc">全国配送対応。店舗受け取りも可能です。</p>
+        </div>
+
       </div>
     </div>
 
@@ -1440,9 +1487,6 @@
 
 </div><!-- /page-wrap -->
 
-<!-- ===========================
-     REASONS
-=========================== -->
 <section class="reasons-section" data-aos="fade-up">
   <div class="reasons-inner">
     <h2 class="contents-block-title">オリジンが選ばれる理由</h2>
@@ -1475,9 +1519,6 @@
   </div>
 </section>
 
-<!-- ===========================
-     STATS
-=========================== -->
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item"><div class="stat-num">1<em>枚〜</em></div><div class="stat-label">小ロット対応</div></div>
@@ -1487,9 +1528,6 @@
   </div>
 </div>
 
-<!-- ===========================
-     CTA
-=========================== -->
 <section class="cta-section" data-aos="fade-up">
   <h2 class="cta-title">まずは無料でご相談ください</h2>
   <p class="cta-lead">
@@ -1514,9 +1552,6 @@
   </div>
 </section>
 
-<!-- ===========================
-     FOOTER
-=========================== -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-top">
@@ -1558,6 +1593,7 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 600, once: true, offset: 40 });
+
 </script>
 
 </body>
